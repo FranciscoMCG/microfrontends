@@ -28,4 +28,8 @@ jobs:
           aws-region: eu-west-2
 
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
-      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html"
+
+      - name: Invalidate Cloudfront CDN
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_DISTRIBUTION_ID }} --paths "/container/latest/index.html"
+        env:
+          CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.AWS_DISTRIBUTION_ID }}
