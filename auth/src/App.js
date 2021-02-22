@@ -8,7 +8,7 @@ import {
 import SignIn from './components/Signin';
 import SignUp from './components/Signup';
 
-const generateClassName = createGenerateClassName({ productionFrefix: 'au' });
+const generateClassName = createGenerateClassName({ productionPrefix: 'au' });
 
 export default ({ history, onSignIn }) => {
   return (

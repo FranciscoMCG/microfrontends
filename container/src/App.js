@@ -12,7 +12,7 @@ const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const DashboardLazy = lazy(() => import('./components/DashboardApp'));
 
-const generateClassName = createGenerateClassName({ productionFrefix: 'co' });
+const generateClassName = createGenerateClassName({ productionPrefix: 'co' });
 
 const history = createBrowserHistory();
 
